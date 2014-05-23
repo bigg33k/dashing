@@ -14,7 +14,7 @@ SCHEDULER.every '30s', :first_in => 0 do
     # get the current value
     current = q.value cx1_tld_target, "-10min"
     # get points for the last half hour
-    points = q.points cx1_tld_target, "-30min"
+    points = q.points cx1_tld_target, "-60min"
 
     # send to dashboard, so the number the meter and the graph widget can understand it
     send_event 'response_time_cx1', { current: current, value: current, points: points }
@@ -30,7 +30,7 @@ SCHEDULER.every '30s', :first_in => 0 do
     # get the current value
     current = q.value cx3_tld_target, "-10min"
     # get points for the last half hour
-    points = q.points cx3_tld_target, "-30min"
+    points = q.points cx3_tld_target, "-60min"
 
     # send to dashboard, so the number the meter and the graph widget can understand it
     send_event 'response_time_cx3', { current: current, value: current, points: points }
@@ -47,7 +47,7 @@ SCHEDULER.every '30s', :first_in => 0 do
     # get the current value
     current = q.value cx_ns_tld_target, "-10min"
     # get points for the last half hour
-    points = q.points cx_ns_tld_target, "-30min"
+    points = q.points cx_ns_tld_target, "-60min"
 
     # send to dashboard, so the number the meter and the graph widget can understand it
     #send_event 'response_time_cx_ns', { current: current, value: current, points: points }
@@ -64,7 +64,7 @@ SCHEDULER.every '30s', :first_in => 0 do
     # get the current value
     current = q.value isc_ns_tld_target, "-10min"
     # get points for the last half hour
-    points = q.points isc_ns_tld_target, "-30min"
+    points = q.points isc_ns_tld_target, "-60min"
 
     #(points << current).flatten
     # send to dashboard, so the number the meter and the graph widget can understand it
